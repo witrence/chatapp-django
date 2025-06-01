@@ -1,0 +1,7 @@
+1. To activate python venv - 
+    .\venv\Scripts\activate (Windows)
+    source venv/bin/activate (Linux)
+
+2. To run python server - python manage.py runserver
+
+3. 
