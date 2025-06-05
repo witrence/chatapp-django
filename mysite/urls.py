@@ -16,8 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+
+def simple_json_view(request):
+    # print("REQUEST  ", request)
+    # print("Method:", request.method)
+    # print("Path:", request.path)
+    # print("Headers:", dict(request.headers))
+    # print("Query params:", request.GET)
+    # print("Body:", request.body)
+    # print("User:", request.user)
+    # print("IP address:", request.META.get("REMOTE_ADDR"))
+    return JsonResponse({"message": "Hello from root!"})
+
 
 urlpatterns = [
+    path("", simple_json_view),  # root route returns JSON
     path("chat/", include("chat.urls")),
     path('admin/', admin.site.urls),
 ]
